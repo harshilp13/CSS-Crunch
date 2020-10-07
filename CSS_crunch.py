@@ -20,7 +20,6 @@ def number_passwords(length,min,max):
   print("----------------------------------------------------------")
   return
 
-
 # Function to compute value of npr 
 def PermutationCoeff(n, r): 
 	coeff = 1
@@ -28,37 +27,32 @@ def PermutationCoeff(n, r):
 	for i in range(0,r): 
 		coeff *= n-i
 	return coeff 
- 
 
 def read_through_file():
   ch_list = []
-  filename = input("ENter the filename = ")
-  # if (!(exists(filename))):
-  # #   print("Invalid filename\nExitting program")
-  # #   exit()
+  filename = input("Enter the filename = ")
+  if (exists(filename)==0):
+    print("Invalid filename\nExitting Program")
+    exit()
   f= open(filename,"r")
-  f.read()
-  for _ in f:
-    ch_list.append(_)
+  while 1: 
+    char = f.read(1)		 
+    if not char: 
+      break
+    ch_list.append(char)	
+    # print(char,'\n') 
   f.close()
   return ch_list
+
 
 
 if __name__ == '__main__':
   ch = int(input("Enter input via 1.File 2.Runtime : "))
   # If user wishes to enter input via input file
   if ch==1:
+    ch_list=read_through_file()
     min=int(input("Enter minimum length : "))
     max=int(input("Enter maximum length : "))
-    file = open("input.txt", "r")
-    ch_list=[]
-    while 1: 	
-      char = file.read(1)		 
-      if not char: 
-        break
-      ch_list.append(char)	
-      print(char,'\n') 
-    file.close()
   # If user chooses to enter input via command line
   elif ch==2:
     print("Enter the characters : ")
@@ -84,8 +78,7 @@ if __name__ == '__main__':
         string= ''.join(x)
         with open("output.txt", 'a') as file: 
           file.write(string+"\t")
-    
-  
+     
   print("\nOUTPUT written to output.txt !!!")
   print("Output File size : ",os.stat('output.txt').st_size,"Bytes")
 
