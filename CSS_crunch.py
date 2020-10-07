@@ -20,19 +20,14 @@ def number_passwords(length,min,max):
   print("----------------------------------------------------------")
   return
 
-# Function to compute value of npr 
-import math 
-def fact(n):  
-    if (n <= 1): 
-        return 1
-          
-    return n * fact(n - 1)  
-  
-def PermutationCoeff(n, r):  
-      
-    return math.floor(fact(n) /
-                fact(n - r))
 
+# Function to compute value of npr 
+def PermutationCoeff(n, r): 
+	coeff = 1
+	# Compute n! and (n-k)! 
+	for i in range(0,r): 
+		coeff *= n-i
+	return coeff 
  
 
 def read_through_file():
