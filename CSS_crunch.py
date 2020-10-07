@@ -44,7 +44,6 @@ def read_through_file():
   return ch_list
 
 
-
 if __name__ == '__main__':
   ch = int(input("Enter input via 1.File 2.Runtime : "))
   # If user wishes to enter input via input file
@@ -55,18 +54,22 @@ if __name__ == '__main__':
     ch_list=[]
     while 1: 	
       char = file.read(1)		 
-      ch_list.append(char)
+      if not char: 
+        break
+      ch_list.append(char)	
+      print(char,'\n') 
     file.close()
   # If user chooses to enter input via command line
   elif ch==2:
     print("Enter the characters : ")
     ch_list = list(map(str, input()))
+    print("You entered : ",ch_list)
     min=int(input("Enter minimum length : "))
     max=int(input("Enter maximum length : "))
   # Invalid choice
   else:
-    print("Enter valid input")   
-    
+    print("Enter valid input")
+  
   # printing the number of passwords that will be generated
   number_passwords(len(ch_list),min,max)
 
@@ -84,4 +87,4 @@ if __name__ == '__main__':
      
   print("\nOUTPUT written to output.txt !!!")
   print("Output File size : ",os.stat('output.txt').st_size,"Bytes")
-#finally we get the output of multiple passwords in the output.txt file
+
