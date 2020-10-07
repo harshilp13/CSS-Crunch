@@ -84,3 +84,4 @@ if __name__ == '__main__':
      
   print("\nOUTPUT written to output.txt !!!")
   print("Output File size : ",os.stat('output.txt').st_size,"Bytes")
+#finally we get the output of multiple passwords in the output.txt file
