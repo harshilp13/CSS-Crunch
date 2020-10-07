@@ -84,7 +84,8 @@ if __name__ == '__main__':
         string= ''.join(x)
         with open("output.txt", 'a') as file: 
           file.write(string+"\t")
-     
+    
+  
   print("\nOUTPUT written to output.txt !!!")
   print("Output File size : ",os.stat('output.txt').st_size,"Bytes")
 
