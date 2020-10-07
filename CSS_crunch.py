@@ -18,4 +18,22 @@ if __name__ == '__main__':
     max=int(input("Enter maximum length : "))
   # Invalid choice
   else:
-    print("Enter valid input")
+    print("Enter valid input")   
+    
+  # printing the number of passwords that will be generated
+  number_passwords(len(ch_list),min,max)
+
+  f=open("output.txt", "w")
+  f.write('\n')
+  for _ in range(min,max+1):
+    if ( _ <= len(ch_list)):
+      output=list(permutations(ch_list,_))
+      for x in output:
+        x=list(x)
+        # print(''.join(x))
+        string= ''.join(x)
+        with open("output.txt", 'a') as file: 
+          file.write(string+"\t")
+     
+  print("\nOUTPUT written to output.txt !!!")
+  print("Output File size : ",os.stat('output.txt').st_size,"Bytes")
