@@ -1,3 +1,25 @@
+# CSS - Crunch wordlister miniature version implementation 
+# Contributors : KJSCE LY Comps B 
+                #  1711105 Jaisingh Rajbhar
+                #  1711126 Ravishankar Yadav
+                #  1711127 Harshil Patel
+                #  1711128 Deep Shah
+
+from itertools import permutations
+import operator as op
+from functools import reduce
+from os.path import exists
+import os
+
+# Computing number of possible passwords that will be generated
+def number_passwords(length,min,max):   
+  sum=0
+  for _ in range(min,max+1):
+    sum += PermutationCoeff(length, _)
+  print("The number of possible permutations that will be generated :  ",sum,"\n")
+  print("----------------------------------------------------------")
+  return
+
 # Function to compute value of npr 
 import math 
 def fact(n):  
