@@ -10,3 +10,18 @@ This github repository shows a python file named "crunch_wordlister.py" which ta
 The implementation serves the base purpose which is generation of wordlists that can be used as passwords and provide security to user. This fulfills the confidentiality goal of the CIA traid of system security. 
 
 [![Demo CountPages alpha](https://j.gifs.com/P7xDq6.gif)]
+
+
+## Bug Reports & Feature Requests
+
+You can help by reporting bugs, suggesting features, reviewing feature specifications or just by sharing your opinion.
+
+## Contributing
+
+1. Fork the project.
+2. Create a branch for your new feature.
+3. Write tests.
+4. Write code to make the tests pass.
+5. Submit a pull request.
+
+All pull requests are welcome !
